@@ -26,17 +26,17 @@ int comment_line = -1; // initial value doesn't really matter, since we only use
 
 %%
  /* keywords */
-break   { return KW_BREAK; }
-case    { return KW_CASE; }
-default { return KW_DEFAULT; }
-else    { return KW_ELSE; }
-if      { return KW_IF; }
-input   { return KW_INPUT; }
-output  { return KW_OUTPUT; }
-switch  { return KW_SWITCH; }
-while   { return KW_WHILE; }
-float   { return KW_FLOAT; }
-int     { return KW_INT; }
+break   { return BREAK; }
+case    { return CASE; }
+default { return DEFAULT; }
+else    { return ELSE; }
+if      { return IF; }
+input   { return INPUT; }
+output  { return OUTPUT; }
+switch  { return SWITCH; }
+while   { return WHILE; }
+float   { return FLOAT; }
+int     { return INT; }
 
  /* symbols */
 \( { return '('; }

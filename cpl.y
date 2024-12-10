@@ -27,11 +27,11 @@ void yyerror(const char* s);
 %token <string_value> IDENTIFIER
 
 /* I/O */
-%token KW_INPUT KW_OUTPUT
+%token INPUT OUTPUT
 
 /* keywords */
-%token KW_IF KW_ELSE KW_WHILE KW_SWITCH KW_CASE KW_DEFAULT KW_BREAK
-%token KW_FLOAT KW_INT
+%token IF ELSE WHILE SWITCH CASE DEFAULT BREAK
+%token FLOAT INT
 
 /* operation */
 %token OR AND NOT
@@ -91,33 +91,33 @@ assignment_stmt:
     ;
 
 input_stmt:
-    KW_INPUT '(' IDENTIFIER ')' ';'
+    INPUT '(' IDENTIFIER ')' ';'
     ;
 
 output_stmt:
-    KW_OUTPUT '(' expression ')' ';'
+    OUTPUT '(' expression ')' ';'
     ;
 
 if_stmt:
-    KW_IF '(' boolexpr ')' stmt KW_ELSE stmt
+    IF '(' boolexpr ')' stmt ELSE stmt
     ;
 
 while_stmt:
-    KW_WHILE '(' boolexpr ')' stmt
+    WHILE '(' boolexpr ')' stmt
     ;
 
 switch_stmt:
-    KW_SWITCH '(' expression ')' '{' caselist
-    KW_DEFAULT ':' stmtlist '}'
+    SWITCH '(' expression ')' '{' caselist
+    DEFAULT ':' stmtlist '}'
     ;
 
 caselist:
-    caselist KW_CASE NUMBER ':' stmtlist
+    caselist CASE NUMBER ':' stmtlist
     | /* epsilon */
     ;
 
 break_stmt:
-    KW_BREAK ';'
+    BREAK ';'
     ;
 
 stmt_block:
@@ -162,8 +162,8 @@ factor:
     ;
 
 type:
-    KW_FLOAT
-    | KW_INT
+    FLOAT
+    | INT
     ;
 
 %%
