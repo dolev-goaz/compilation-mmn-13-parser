@@ -1,0 +1,59 @@
+/* Variable Declarations */
+x, y, z : int;
+a, b : float;
+
+{
+    /* Input and Output Statements */
+    input(x);
+    input(y);
+    output(x + y);
+
+    /* Assignment and Arithmetic Expressions */
+    z = x + y;
+    a = 3.14 * b;
+
+    /* If-Else Statement */
+    if (x == y) {
+        output(z);
+    } else {
+        output(x - y);
+    }
+
+    /* While Loop */
+    while (x > 0) {
+        x = x - 1;
+    }
+
+    /* Switch-Case Statement */
+    switch (z) {
+        case 1:
+            output(z);
+            break;
+        case 2:
+            z = z * 2;
+            break;
+        default:
+            output(0);
+    }
+
+    /* Boolean Expressions with AND, OR, NOT */
+    if (x != y && y >= z || !(a < b)) {
+        z = x + y;
+    } else {
+        z = y + 5;
+    }
+
+    /* Casting */
+    a = cast<float>(x);
+    b = cast<int>(a) * 2.5;
+
+    /* Nested Blocks */
+    {
+        x = 10;
+        y = 20;
+        {
+            z = x * y;
+            output(z);
+        }
+    }
+}
